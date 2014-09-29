@@ -82,12 +82,25 @@ X = [ones(m, 1) X];
 fprintf('Running gradient descent ...\n');
 
 % Choose some alpha value
-alpha = 0.01;
-num_iters = 400;
+alpha = 0.1;
+num_iters = 1000;
+
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(3, 1);
 [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+
+
+%theta = zeros(3, 1);
+%[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+%plot(1:50, J_history(1:50), `b');
+%hold on;
+%theta = zeros(3, 1);
+%[theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters);
+
+
+
+
 
 % Plot the convergence graph
 figure;
@@ -106,6 +119,10 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
+denom = [1650 3];
+normalized = (denom - mu) ./sigma;
+
+price = theta' * [1 normalized]';
 
 % ============================================================
 
@@ -128,7 +145,7 @@ fprintf('Solving with normal equations...\n');
 %               After doing so, you should complete this code 
 %               to predict the price of a 1650 sq-ft, 3 br house.
 %
-
+% theta = [340412.653452; 110572.961931; -6591.385923];
 %% Load Data
 data = csvread('ex1data2.txt');
 X = data(:, 1:2);
@@ -150,7 +167,8 @@ fprintf('\n');
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
-
+house1 = [1650 3];
+price = theta' * [1 house1]';
 
 % ============================================================
 
