@@ -20,7 +20,11 @@ S = zeros(n);
 %       number of examples).
 %
 
+SIGMA = (1/m).*(X'*X);
 
+% U - principal components
+% S - diagonal matrix
+[U, S, V] = svd(SIGMA);
 
 
 

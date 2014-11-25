@@ -21,7 +21,14 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
+for ex_i=1:length(idx)
+	%X(ex_i, :)
+	%centroids
+	idx_minus = num2cell(repmat(X(ex_i, :), K, 1) .- centroids, 2);   
+	idx_cand = cellfun(@norm, idx_minus);
+	[x, ix] = min(idx_cand);
+	idx(ex_i) = ix;
+endfor
 
 
 

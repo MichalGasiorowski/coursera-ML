@@ -20,6 +20,7 @@
 
 %% Initialization
 clear ; close all; clc
+%warning ("error", "Octave:broadcast");
 
 %% ================= Part 1: Find Closest Centroids ====================
 %  To help you implement K-Means, we have divided the learning algorithm 
@@ -64,6 +65,7 @@ fprintf('   [ 7.119387 3.616684 ]\n\n');
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
+
 
 
 %% =================== Part 3: K-Means Clustering ======================
