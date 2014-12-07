@@ -156,6 +156,7 @@ end
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
+% error('dupa'); % to stop expensive computation before all is solved
 
 %% ================== Part 7: Learning Movie Ratings ====================
 %  Now, you will train the collaborative filtering model on a movie rating 
